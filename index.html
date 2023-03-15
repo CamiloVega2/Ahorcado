@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function soloLetras(e) {
+            var key = e.keyCode || e.which,
+                tecla = String.fromCharCode(key).toLowerCase(),
+                letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
+                especiales = [8, 37, 39, 46],
+                tecla_especial = false;
+
+            for (var i in especiales) {
+                if (key == especiales[i]) {
+                    tecla_especial = true;
+                    break;
+                }
+            }
+
+            if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+                return false;
+            }
+        }</script>
+    <title>Ahorcado</title>
+</head>
+
+<body id="body" class="h-screen bg-cover"
+    style="background-image: url('https://humanidades.com/wp-content/uploads/2016/03/ciencia-e1557789923654-800x412.jpg');">
+    <div class="flex h-full">
+        <div class="w-1/2 flex flex-wrap h-full justify-center items-center" id="cajaletras">
+            <div id="cajagrande" class="my-[10%] mx-[10%] w-[50%] "></div>
+        </div>
+        <div class="w-1/2">
+            <div class="flex w-full justify-around "><input id="cajadetexto" type="text" maxlength="1"
+                    onkeypress="return soloLetras(event)"
+                    class="border-solid border-2 border-gray-100 bg-gray-400 pl-[5px]"><button id="btn"
+                    class="border-solid border-2 border-blue-400 text-gray-200 border-gray-500 bg-gray-900">Enviar</button>
+            </div>
+            <div id="palabra" class="flex w-full justify-between"></div>
+            <div id="caja de palabras usadas" class="border-solid border-white border-2 mt-[5%] h-[80%]">
+                <p class="flex justify-center text-gray-300">Letras Usadas</p>
+                <div
+                    class="border-solid border-2 border-gray-500 grid grid-cols-3 grid-rows-9 h-[95%] w-[95%] ml-[2.5%] text-gray-200">
+                    <div id="usada1" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada2" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada3" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada4" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada5" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada6" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada7" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada8" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada9" class="h-[1/9] flex justify-center  text-4xl items-center"></div>
+                    <div id="usada10" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada11" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada12" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada13" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada14" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada15" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada16" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada17" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada18" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada19" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada20" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada21" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada22" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada23" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada24" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada25" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada26" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                    <div id="usada27" class="h-[1/9] flex justify-center text-4xl items-center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+</html>
