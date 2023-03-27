@@ -31,11 +31,6 @@ let ganador = Array.apply("", Array(palabraahorcado.length));
 let contwin = 0;
 let contloss = 0;
 
-texto.addEventListener("keyup", function (e) {
-  if (e.code == "Enter") {
-    verificarletra();
-  }
-});
 for (let i = 1; i < 28; i++) {
   letrasusadas.innerHTML += ` <div id="usada${i}" class="h-[1/9] flex justify-center  text-4xl items-center"></div>`;
 }
@@ -142,6 +137,11 @@ function verificarletra() {
   }
 }
 btn.addEventListener("click", verificarletra);
+texto.addEventListener("keyup", function (e) {
+  if (e.code == "Enter") {
+    verificarletra();
+  }
+});
 
 
 function reset() {
@@ -195,12 +195,6 @@ function reset() {
   for (let i = 0; i < lineas; i++) {
     palabra.innerHTML += `<div id="letra${i}" class = "text-gray-200 text-4xl flex justify-center items-center border-solid border-2 border-gray-200 border-t-transparent border-r-transparent border-l-transparent h-[5rem] w-full"></div>`;
   }
-
-  texto.addEventListener("keyup", function (e) {
-    if (e.code == "Enter") {
-      verificarletra();
-    }
-  });
   function verificarletra() {
     for (let j = 0; j < palabraahorcado.length; j++) {
       if (texto.value.toLowerCase() == "" || !isNaN(texto.value.toLowerCase())) {
@@ -301,4 +295,9 @@ function reset() {
     }
   }
   btn.addEventListener("click", verificarletra);
+  texto.addEventListener("keyup", function (e) {
+    if (e.code == "Enter") {
+      verificarletra();
+    }
+  });
 }
